@@ -1,0 +1,23 @@
+syntax = "proto2";
+package employee;
+
+message Id {
+  required int64 id = 1;
+}
+
+message EmployeeProto {
+  optional int64 id = 1;
+  optional string name = 2;
+  optional string secondName = 3;
+  optional string surname = 4;
+  optional string photoUrl = 5;
+  optional string hireDate = 6;
+  optional string position = 7;
+  optional int64 companyId = 8;
+}
+
+
+service Employee {
+  rpc GetEmployee (Id) returns (EmployeeProto);
+  rpc CreateEmployee (EmployeeProto) returns (Id);
+}
