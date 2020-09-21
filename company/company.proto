@@ -2,16 +2,39 @@ syntax = "proto3";
 package company;
 
 message Id {
-   int64 id = 1;
+  int64 id = 1;
 }
 
 message CompanyProto {
-   int64 id = 1;
-   string name = 2;
-   string legalform = 3;
+  int64 id = 1;
+  string name = 2;
+  string legalform = 3;
+}
+
+message EmployeeProto {
+  int64 id = 1;
+  string name = 2;
+  string secondName = 3;
+  string surname = 4;
+  string photoUrl = 5;
+  string hireDate = 6;
+  string position = 7;
+  int64 companyId = 8;
+}
+
+message CompanyReply{
+  string message = 1;
+}
+
+message Employees{
+  repeated EmployeeProto employees = 1;
 }
 
 service Company {
   rpc GetCompany (Id) returns (CompanyProto);
   rpc CreateCompany (CompanyProto) returns (Id);
+  rpc DeleteCompany (Id) returns (CompanyReply);
+  rpc UpdateCompany (CompanyProto) returns (CompanyReply);
+  rpc FormUpdateCompany (CompanyProto) returns (CompanyReply);
+  rpc GetEmployeesByCompany (Id) returns (Employees);
 }

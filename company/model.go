@@ -5,3 +5,4 @@ type Company struct {
 	Name      string `json:"name"`
 	Legalform string `json:"legal_form"`
 }
+

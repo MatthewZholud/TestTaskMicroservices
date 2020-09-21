@@ -139,6 +139,203 @@ func (x *CompanyProto) GetLegalform() string {
 	return ""
 }
 
+type EmployeeProto struct {
+	state         protoimpl.MessageState
+	sizeCache     protoimpl.SizeCache
+	unknownFields protoimpl.UnknownFields
+
+	Id         int64  `protobuf:"varint,1,opt,name=id,proto3" json:"id,omitempty"`
+	Name       string `protobuf:"bytes,2,opt,name=name,proto3" json:"name,omitempty"`
+	SecondName string `protobuf:"bytes,3,opt,name=secondName,proto3" json:"secondName,omitempty"`
+	Surname    string `protobuf:"bytes,4,opt,name=surname,proto3" json:"surname,omitempty"`
+	PhotoUrl   string `protobuf:"bytes,5,opt,name=photoUrl,proto3" json:"photoUrl,omitempty"`
+	HireDate   string `protobuf:"bytes,6,opt,name=hireDate,proto3" json:"hireDate,omitempty"`
+	Position   string `protobuf:"bytes,7,opt,name=position,proto3" json:"position,omitempty"`
+	CompanyId  int64  `protobuf:"varint,8,opt,name=companyId,proto3" json:"companyId,omitempty"`
+}
+
+func (x *EmployeeProto) Reset() {
+	*x = EmployeeProto{}
+	if protoimpl.UnsafeEnabled {
+		mi := &file_company_proto_msgTypes[2]
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		ms.StoreMessageInfo(mi)
+	}
+}
+
+func (x *EmployeeProto) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*EmployeeProto) ProtoMessage() {}
+
+func (x *EmployeeProto) ProtoReflect() protoreflect.Message {
+	mi := &file_company_proto_msgTypes[2]
+	if protoimpl.UnsafeEnabled && x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use EmployeeProto.ProtoReflect.Descriptor instead.
+func (*EmployeeProto) Descriptor() ([]byte, []int) {
+	return file_company_proto_rawDescGZIP(), []int{2}
+}
+
+func (x *EmployeeProto) GetId() int64 {
+	if x != nil {
+		return x.Id
+	}
+	return 0
+}
+
+func (x *EmployeeProto) GetName() string {
+	if x != nil {
+		return x.Name
+	}
+	return ""
+}
+
+func (x *EmployeeProto) GetSecondName() string {
+	if x != nil {
+		return x.SecondName
+	}
+	return ""
+}
+
+func (x *EmployeeProto) GetSurname() string {
+	if x != nil {
+		return x.Surname
+	}
+	return ""
+}
+
+func (x *EmployeeProto) GetPhotoUrl() string {
+	if x != nil {
+		return x.PhotoUrl
+	}
+	return ""
+}
+
+func (x *EmployeeProto) GetHireDate() string {
+	if x != nil {
+		return x.HireDate
+	}
+	return ""
+}
+
+func (x *EmployeeProto) GetPosition() string {
+	if x != nil {
+		return x.Position
+	}
+	return ""
+}
+
+func (x *EmployeeProto) GetCompanyId() int64 {
+	if x != nil {
+		return x.CompanyId
+	}
+	return 0
+}
+
+type CompanyReply struct {
+	state         protoimpl.MessageState
+	sizeCache     protoimpl.SizeCache
+	unknownFields protoimpl.UnknownFields
+
+	Message string `protobuf:"bytes,1,opt,name=message,proto3" json:"message,omitempty"`
+}
+
+func (x *CompanyReply) Reset() {
+	*x = CompanyReply{}
+	if protoimpl.UnsafeEnabled {
+		mi := &file_company_proto_msgTypes[3]
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		ms.StoreMessageInfo(mi)
+	}
+}
+
+func (x *CompanyReply) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*CompanyReply) ProtoMessage() {}
+
+func (x *CompanyReply) ProtoReflect() protoreflect.Message {
+	mi := &file_company_proto_msgTypes[3]
+	if protoimpl.UnsafeEnabled && x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use CompanyReply.ProtoReflect.Descriptor instead.
+func (*CompanyReply) Descriptor() ([]byte, []int) {
+	return file_company_proto_rawDescGZIP(), []int{3}
+}
+
+func (x *CompanyReply) GetMessage() string {
+	if x != nil {
+		return x.Message
+	}
+	return ""
+}
+
+type Employees struct {
+	state         protoimpl.MessageState
+	sizeCache     protoimpl.SizeCache
+	unknownFields protoimpl.UnknownFields
+
+	Employees []*EmployeeProto `protobuf:"bytes,1,rep,name=employees,proto3" json:"employees,omitempty"`
+}
+
+func (x *Employees) Reset() {
+	*x = Employees{}
+	if protoimpl.UnsafeEnabled {
+		mi := &file_company_proto_msgTypes[4]
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		ms.StoreMessageInfo(mi)
+	}
+}
+
+func (x *Employees) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*Employees) ProtoMessage() {}
+
+func (x *Employees) ProtoReflect() protoreflect.Message {
+	mi := &file_company_proto_msgTypes[4]
+	if protoimpl.UnsafeEnabled && x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use Employees.ProtoReflect.Descriptor instead.
+func (*Employees) Descriptor() ([]byte, []int) {
+	return file_company_proto_rawDescGZIP(), []int{4}
+}
+
+func (x *Employees) GetEmployees() []*EmployeeProto {
+	if x != nil {
+		return x.Employees
+	}
+	return nil
+}
+
 var File_company_proto protoreflect.FileDescriptor
 
 var file_company_proto_rawDesc = []byte{
@@ -150,14 +347,50 @@ var file_company_proto_rawDesc = []byte{
 	0x0a, 0x04, 0x6e, 0x61, 0x6d, 0x65, 0x18, 0x02, 0x20, 0x01, 0x28, 0x09, 0x52, 0x04, 0x6e, 0x61,
 	0x6d, 0x65, 0x12, 0x1c, 0x0a, 0x09, 0x6c, 0x65, 0x67, 0x61, 0x6c, 0x66, 0x6f, 0x72, 0x6d, 0x18,
 	0x03, 0x20, 0x01, 0x28, 0x09, 0x52, 0x09, 0x6c, 0x65, 0x67, 0x61, 0x6c, 0x66, 0x6f, 0x72, 0x6d,
-	0x32, 0x70, 0x0a, 0x07, 0x43, 0x6f, 0x6d, 0x70, 0x61, 0x6e, 0x79, 0x12, 0x30, 0x0a, 0x0a, 0x47,
+	0x22, 0xdf, 0x01, 0x0a, 0x0d, 0x45, 0x6d, 0x70, 0x6c, 0x6f, 0x79, 0x65, 0x65, 0x50, 0x72, 0x6f,
+	0x74, 0x6f, 0x12, 0x0e, 0x0a, 0x02, 0x69, 0x64, 0x18, 0x01, 0x20, 0x01, 0x28, 0x03, 0x52, 0x02,
+	0x69, 0x64, 0x12, 0x12, 0x0a, 0x04, 0x6e, 0x61, 0x6d, 0x65, 0x18, 0x02, 0x20, 0x01, 0x28, 0x09,
+	0x52, 0x04, 0x6e, 0x61, 0x6d, 0x65, 0x12, 0x1e, 0x0a, 0x0a, 0x73, 0x65, 0x63, 0x6f, 0x6e, 0x64,
+	0x4e, 0x61, 0x6d, 0x65, 0x18, 0x03, 0x20, 0x01, 0x28, 0x09, 0x52, 0x0a, 0x73, 0x65, 0x63, 0x6f,
+	0x6e, 0x64, 0x4e, 0x61, 0x6d, 0x65, 0x12, 0x18, 0x0a, 0x07, 0x73, 0x75, 0x72, 0x6e, 0x61, 0x6d,
+	0x65, 0x18, 0x04, 0x20, 0x01, 0x28, 0x09, 0x52, 0x07, 0x73, 0x75, 0x72, 0x6e, 0x61, 0x6d, 0x65,
+	0x12, 0x1a, 0x0a, 0x08, 0x70, 0x68, 0x6f, 0x74, 0x6f, 0x55, 0x72, 0x6c, 0x18, 0x05, 0x20, 0x01,
+	0x28, 0x09, 0x52, 0x08, 0x70, 0x68, 0x6f, 0x74, 0x6f, 0x55, 0x72, 0x6c, 0x12, 0x1a, 0x0a, 0x08,
+	0x68, 0x69, 0x72, 0x65, 0x44, 0x61, 0x74, 0x65, 0x18, 0x06, 0x20, 0x01, 0x28, 0x09, 0x52, 0x08,
+	0x68, 0x69, 0x72, 0x65, 0x44, 0x61, 0x74, 0x65, 0x12, 0x1a, 0x0a, 0x08, 0x70, 0x6f, 0x73, 0x69,
+	0x74, 0x69, 0x6f, 0x6e, 0x18, 0x07, 0x20, 0x01, 0x28, 0x09, 0x52, 0x08, 0x70, 0x6f, 0x73, 0x69,
+	0x74, 0x69, 0x6f, 0x6e, 0x12, 0x1c, 0x0a, 0x09, 0x63, 0x6f, 0x6d, 0x70, 0x61, 0x6e, 0x79, 0x49,
+	0x64, 0x18, 0x08, 0x20, 0x01, 0x28, 0x03, 0x52, 0x09, 0x63, 0x6f, 0x6d, 0x70, 0x61, 0x6e, 0x79,
+	0x49, 0x64, 0x22, 0x28, 0x0a, 0x0c, 0x43, 0x6f, 0x6d, 0x70, 0x61, 0x6e, 0x79, 0x52, 0x65, 0x70,
+	0x6c, 0x79, 0x12, 0x18, 0x0a, 0x07, 0x6d, 0x65, 0x73, 0x73, 0x61, 0x67, 0x65, 0x18, 0x01, 0x20,
+	0x01, 0x28, 0x09, 0x52, 0x07, 0x6d, 0x65, 0x73, 0x73, 0x61, 0x67, 0x65, 0x22, 0x41, 0x0a, 0x09,
+	0x45, 0x6d, 0x70, 0x6c, 0x6f, 0x79, 0x65, 0x65, 0x73, 0x12, 0x34, 0x0a, 0x09, 0x65, 0x6d, 0x70,
+	0x6c, 0x6f, 0x79, 0x65, 0x65, 0x73, 0x18, 0x01, 0x20, 0x03, 0x28, 0x0b, 0x32, 0x16, 0x2e, 0x63,
+	0x6f, 0x6d, 0x70, 0x61, 0x6e, 0x79, 0x2e, 0x45, 0x6d, 0x70, 0x6c, 0x6f, 0x79, 0x65, 0x65, 0x50,
+	0x72, 0x6f, 0x74, 0x6f, 0x52, 0x09, 0x65, 0x6d, 0x70, 0x6c, 0x6f, 0x79, 0x65, 0x65, 0x73, 0x32,
+	0xe1, 0x02, 0x0a, 0x07, 0x43, 0x6f, 0x6d, 0x70, 0x61, 0x6e, 0x79, 0x12, 0x30, 0x0a, 0x0a, 0x47,
 	0x65, 0x74, 0x43, 0x6f, 0x6d, 0x70, 0x61, 0x6e, 0x79, 0x12, 0x0b, 0x2e, 0x63, 0x6f, 0x6d, 0x70,
 	0x61, 0x6e, 0x79, 0x2e, 0x49, 0x64, 0x1a, 0x15, 0x2e, 0x63, 0x6f, 0x6d, 0x70, 0x61, 0x6e, 0x79,
 	0x2e, 0x43, 0x6f, 0x6d, 0x70, 0x61, 0x6e, 0x79, 0x50, 0x72, 0x6f, 0x74, 0x6f, 0x12, 0x33, 0x0a,
 	0x0d, 0x43, 0x72, 0x65, 0x61, 0x74, 0x65, 0x43, 0x6f, 0x6d, 0x70, 0x61, 0x6e, 0x79, 0x12, 0x15,
 	0x2e, 0x63, 0x6f, 0x6d, 0x70, 0x61, 0x6e, 0x79, 0x2e, 0x43, 0x6f, 0x6d, 0x70, 0x61, 0x6e, 0x79,
 	0x50, 0x72, 0x6f, 0x74, 0x6f, 0x1a, 0x0b, 0x2e, 0x63, 0x6f, 0x6d, 0x70, 0x61, 0x6e, 0x79, 0x2e,
-	0x49, 0x64, 0x62, 0x06, 0x70, 0x72, 0x6f, 0x74, 0x6f, 0x33,
+	0x49, 0x64, 0x12, 0x33, 0x0a, 0x0d, 0x44, 0x65, 0x6c, 0x65, 0x74, 0x65, 0x43, 0x6f, 0x6d, 0x70,
+	0x61, 0x6e, 0x79, 0x12, 0x0b, 0x2e, 0x63, 0x6f, 0x6d, 0x70, 0x61, 0x6e, 0x79, 0x2e, 0x49, 0x64,
+	0x1a, 0x15, 0x2e, 0x63, 0x6f, 0x6d, 0x70, 0x61, 0x6e, 0x79, 0x2e, 0x43, 0x6f, 0x6d, 0x70, 0x61,
+	0x6e, 0x79, 0x52, 0x65, 0x70, 0x6c, 0x79, 0x12, 0x3d, 0x0a, 0x0d, 0x55, 0x70, 0x64, 0x61, 0x74,
+	0x65, 0x43, 0x6f, 0x6d, 0x70, 0x61, 0x6e, 0x79, 0x12, 0x15, 0x2e, 0x63, 0x6f, 0x6d, 0x70, 0x61,
+	0x6e, 0x79, 0x2e, 0x43, 0x6f, 0x6d, 0x70, 0x61, 0x6e, 0x79, 0x50, 0x72, 0x6f, 0x74, 0x6f, 0x1a,
+	0x15, 0x2e, 0x63, 0x6f, 0x6d, 0x70, 0x61, 0x6e, 0x79, 0x2e, 0x43, 0x6f, 0x6d, 0x70, 0x61, 0x6e,
+	0x79, 0x52, 0x65, 0x70, 0x6c, 0x79, 0x12, 0x41, 0x0a, 0x11, 0x46, 0x6f, 0x72, 0x6d, 0x55, 0x70,
+	0x64, 0x61, 0x74, 0x65, 0x43, 0x6f, 0x6d, 0x70, 0x61, 0x6e, 0x79, 0x12, 0x15, 0x2e, 0x63, 0x6f,
+	0x6d, 0x70, 0x61, 0x6e, 0x79, 0x2e, 0x43, 0x6f, 0x6d, 0x70, 0x61, 0x6e, 0x79, 0x50, 0x72, 0x6f,
+	0x74, 0x6f, 0x1a, 0x15, 0x2e, 0x63, 0x6f, 0x6d, 0x70, 0x61, 0x6e, 0x79, 0x2e, 0x43, 0x6f, 0x6d,
+	0x70, 0x61, 0x6e, 0x79, 0x52, 0x65, 0x70, 0x6c, 0x79, 0x12, 0x38, 0x0a, 0x15, 0x47, 0x65, 0x74,
+	0x45, 0x6d, 0x70, 0x6c, 0x6f, 0x79, 0x65, 0x65, 0x73, 0x42, 0x79, 0x43, 0x6f, 0x6d, 0x70, 0x61,
+	0x6e, 0x79, 0x12, 0x0b, 0x2e, 0x63, 0x6f, 0x6d, 0x70, 0x61, 0x6e, 0x79, 0x2e, 0x49, 0x64, 0x1a,
+	0x12, 0x2e, 0x63, 0x6f, 0x6d, 0x70, 0x61, 0x6e, 0x79, 0x2e, 0x45, 0x6d, 0x70, 0x6c, 0x6f, 0x79,
+	0x65, 0x65, 0x73, 0x62, 0x06, 0x70, 0x72, 0x6f, 0x74, 0x6f, 0x33,
 }
 
 var (
@@ -172,21 +405,33 @@ func file_company_proto_rawDescGZIP() []byte {
 	return file_company_proto_rawDescData
 }
 
-var file_company_proto_msgTypes = make([]protoimpl.MessageInfo, 2)
+var file_company_proto_msgTypes = make([]protoimpl.MessageInfo, 5)
 var file_company_proto_goTypes = []interface{}{
-	(*Id)(nil),           // 0: company.Id
-	(*CompanyProto)(nil), // 1: company.CompanyProto
+	(*Id)(nil),            // 0: company.Id
+	(*CompanyProto)(nil),  // 1: company.CompanyProto
+	(*EmployeeProto)(nil), // 2: company.EmployeeProto
+	(*CompanyReply)(nil),  // 3: company.CompanyReply
+	(*Employees)(nil),     // 4: company.Employees
 }
 var file_company_proto_depIdxs = []int32{
-	0, // 0: company.Company.GetCompany:input_type -> company.Id
-	1, // 1: company.Company.CreateCompany:input_type -> company.CompanyProto
-	1, // 2: company.Company.GetCompany:output_type -> company.CompanyProto
-	0, // 3: company.Company.CreateCompany:output_type -> company.Id
-	2, // [2:4] is the sub-list for method output_type
-	0, // [0:2] is the sub-list for method input_type
-	0, // [0:0] is the sub-list for extension type_name
-	0, // [0:0] is the sub-list for extension extendee
-	0, // [0:0] is the sub-list for field type_name
+	2, // 0: company.Employees.employees:type_name -> company.EmployeeProto
+	0, // 1: company.Company.GetCompany:input_type -> company.Id
+	1, // 2: company.Company.CreateCompany:input_type -> company.CompanyProto
+	0, // 3: company.Company.DeleteCompany:input_type -> company.Id
+	1, // 4: company.Company.UpdateCompany:input_type -> company.CompanyProto
+	1, // 5: company.Company.FormUpdateCompany:input_type -> company.CompanyProto
+	0, // 6: company.Company.GetEmployeesByCompany:input_type -> company.Id
+	1, // 7: company.Company.GetCompany:output_type -> company.CompanyProto
+	0, // 8: company.Company.CreateCompany:output_type -> company.Id
+	3, // 9: company.Company.DeleteCompany:output_type -> company.CompanyReply
+	3, // 10: company.Company.UpdateCompany:output_type -> company.CompanyReply
+	3, // 11: company.Company.FormUpdateCompany:output_type -> company.CompanyReply
+	4, // 12: company.Company.GetEmployeesByCompany:output_type -> company.Employees
+	7, // [7:13] is the sub-list for method output_type
+	1, // [1:7] is the sub-list for method input_type
+	1, // [1:1] is the sub-list for extension type_name
+	1, // [1:1] is the sub-list for extension extendee
+	0, // [0:1] is the sub-list for field type_name
 }
 
 func init() { file_company_proto_init() }
@@ -219,6 +464,42 @@ func file_company_proto_init() {
 				return nil
 			}
 		}
+		file_company_proto_msgTypes[2].Exporter = func(v interface{}, i int) interface{} {
+			switch v := v.(*EmployeeProto); i {
+			case 0:
+				return &v.state
+			case 1:
+				return &v.sizeCache
+			case 2:
+				return &v.unknownFields
+			default:
+				return nil
+			}
+		}
+		file_company_proto_msgTypes[3].Exporter = func(v interface{}, i int) interface{} {
+			switch v := v.(*CompanyReply); i {
+			case 0:
+				return &v.state
+			case 1:
+				return &v.sizeCache
+			case 2:
+				return &v.unknownFields
+			default:
+				return nil
+			}
+		}
+		file_company_proto_msgTypes[4].Exporter = func(v interface{}, i int) interface{} {
+			switch v := v.(*Employees); i {
+			case 0:
+				return &v.state
+			case 1:
+				return &v.sizeCache
+			case 2:
+				return &v.unknownFields
+			default:
+				return nil
+			}
+		}
 	}
 	type x struct{}
 	out := protoimpl.TypeBuilder{
@@ -226,7 +507,7 @@ func file_company_proto_init() {
 			GoPackagePath: reflect.TypeOf(x{}).PkgPath(),
 			RawDescriptor: file_company_proto_rawDesc,
 			NumEnums:      0,
-			NumMessages:   2,
+			NumMessages:   5,
 			NumExtensions: 0,
 			NumServices:   1,
 		},
@@ -254,6 +535,10 @@ const _ = grpc.SupportPackageIsVersion6
 type CompanyClient interface {
 	GetCompany(ctx context.Context, in *Id, opts ...grpc.CallOption) (*CompanyProto, error)
 	CreateCompany(ctx context.Context, in *CompanyProto, opts ...grpc.CallOption) (*Id, error)
+	DeleteCompany(ctx context.Context, in *Id, opts ...grpc.CallOption) (*CompanyReply, error)
+	UpdateCompany(ctx context.Context, in *CompanyProto, opts ...grpc.CallOption) (*CompanyReply, error)
+	FormUpdateCompany(ctx context.Context, in *CompanyProto, opts ...grpc.CallOption) (*CompanyReply, error)
+	GetEmployeesByCompany(ctx context.Context, in *Id, opts ...grpc.CallOption) (*Employees, error)
 }
 
 type companyClient struct {
@@ -282,10 +567,50 @@ func (c *companyClient) CreateCompany(ctx context.Context, in *CompanyProto, opt
 	return out, nil
 }
 
+func (c *companyClient) DeleteCompany(ctx context.Context, in *Id, opts ...grpc.CallOption) (*CompanyReply, error) {
+	out := new(CompanyReply)
+	err := c.cc.Invoke(ctx, "/company.Company/DeleteCompany", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *companyClient) UpdateCompany(ctx context.Context, in *CompanyProto, opts ...grpc.CallOption) (*CompanyReply, error) {
+	out := new(CompanyReply)
+	err := c.cc.Invoke(ctx, "/company.Company/UpdateCompany", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *companyClient) FormUpdateCompany(ctx context.Context, in *CompanyProto, opts ...grpc.CallOption) (*CompanyReply, error) {
+	out := new(CompanyReply)
+	err := c.cc.Invoke(ctx, "/company.Company/FormUpdateCompany", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *companyClient) GetEmployeesByCompany(ctx context.Context, in *Id, opts ...grpc.CallOption) (*Employees, error) {
+	out := new(Employees)
+	err := c.cc.Invoke(ctx, "/company.Company/GetEmployeesByCompany", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
 // CompanyServer is the server API for Company service.
 type CompanyServer interface {
 	GetCompany(context.Context, *Id) (*CompanyProto, error)
 	CreateCompany(context.Context, *CompanyProto) (*Id, error)
+	DeleteCompany(context.Context, *Id) (*CompanyReply, error)
+	UpdateCompany(context.Context, *CompanyProto) (*CompanyReply, error)
+	FormUpdateCompany(context.Context, *CompanyProto) (*CompanyReply, error)
+	GetEmployeesByCompany(context.Context, *Id) (*Employees, error)
 }
 
 // UnimplementedCompanyServer can be embedded to have forward compatible implementations.
@@ -297,6 +622,18 @@ func (*UnimplementedCompanyServer) GetCompany(context.Context, *Id) (*CompanyPro
 }
 func (*UnimplementedCompanyServer) CreateCompany(context.Context, *CompanyProto) (*Id, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method CreateCompany not implemented")
+}
+func (*UnimplementedCompanyServer) DeleteCompany(context.Context, *Id) (*CompanyReply, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method DeleteCompany not implemented")
+}
+func (*UnimplementedCompanyServer) UpdateCompany(context.Context, *CompanyProto) (*CompanyReply, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method UpdateCompany not implemented")
+}
+func (*UnimplementedCompanyServer) FormUpdateCompany(context.Context, *CompanyProto) (*CompanyReply, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method FormUpdateCompany not implemented")
+}
+func (*UnimplementedCompanyServer) GetEmployeesByCompany(context.Context, *Id) (*Employees, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method GetEmployeesByCompany not implemented")
 }
 
 func RegisterCompanyServer(s *grpc.Server, srv CompanyServer) {
@@ -339,6 +676,78 @@ func _Company_CreateCompany_Handler(srv interface{}, ctx context.Context, dec fu
 	return interceptor(ctx, in, info, handler)
 }
 
+func _Company_DeleteCompany_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(Id)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(CompanyServer).DeleteCompany(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/company.Company/DeleteCompany",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(CompanyServer).DeleteCompany(ctx, req.(*Id))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _Company_UpdateCompany_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(CompanyProto)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(CompanyServer).UpdateCompany(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/company.Company/UpdateCompany",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(CompanyServer).UpdateCompany(ctx, req.(*CompanyProto))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _Company_FormUpdateCompany_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(CompanyProto)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(CompanyServer).FormUpdateCompany(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/company.Company/FormUpdateCompany",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(CompanyServer).FormUpdateCompany(ctx, req.(*CompanyProto))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _Company_GetEmployeesByCompany_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(Id)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(CompanyServer).GetEmployeesByCompany(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/company.Company/GetEmployeesByCompany",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(CompanyServer).GetEmployeesByCompany(ctx, req.(*Id))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
 var _Company_serviceDesc = grpc.ServiceDesc{
 	ServiceName: "company.Company",
 	HandlerType: (*CompanyServer)(nil),
@@ -350,6 +759,22 @@ var _Company_serviceDesc = grpc.ServiceDesc{
 		{
 			MethodName: "CreateCompany",
 			Handler:    _Company_CreateCompany_Handler,
+		},
+		{
+			MethodName: "DeleteCompany",
+			Handler:    _Company_DeleteCompany_Handler,
+		},
+		{
+			MethodName: "UpdateCompany",
+			Handler:    _Company_UpdateCompany_Handler,
+		},
+		{
+			MethodName: "FormUpdateCompany",
+			Handler:    _Company_FormUpdateCompany_Handler,
+		},
+		{
+			MethodName: "GetEmployeesByCompany",
+			Handler:    _Company_GetEmployeesByCompany_Handler,
 		},
 	},
 	Streams:  []grpc.StreamDesc{},

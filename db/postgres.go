@@ -7,13 +7,12 @@ import (
 )
 
 type Postgres struct {
-	Db *sql.DB
-	DBName  string
+	Db     *sql.DB
+	DBName string
 }
 
 const dbname = "company_manager"
 
-//NewMongoDB NewMongoDB
 func NewPostgresDB() (*Postgres, error) {
 	//config := DBConfig{}
 	PsqlInfo := fmt.Sprintf("host=%s port=%s user=%s password=%s dbname=%s sslmode=disable",

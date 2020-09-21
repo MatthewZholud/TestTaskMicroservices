@@ -2,22 +2,28 @@ syntax = "proto3";
 package employee;
 
 message Id {
-   int64 id = 1;
+  int64 id = 1;
 }
 
 message EmployeeProto {
-   int64 id = 1;
-   string name = 2;
-   string secondName = 3;
-   string surname = 4;
-   string photoUrl = 5;
-   string hireDate = 6;
-   string position = 7;
-   int64 companyId = 8;
+  int64 id = 1;
+  string name = 2;
+  string secondName = 3;
+  string surname = 4;
+  string photoUrl = 5;
+  string hireDate = 6;
+  string position = 7;
+  int64 companyId = 8;
 }
 
+message EmployeeReply{
+  string message = 1;
+}
 
 service Employee {
   rpc GetEmployee (Id) returns (EmployeeProto);
   rpc CreateEmployee (EmployeeProto) returns (Id);
+  rpc DeleteEmployee (Id) returns (EmployeeReply);
+  rpc UpdateEmployee (EmployeeProto) returns (EmployeeReply);
+  rpc FormUpdateEmployee (EmployeeProto) returns (EmployeeReply);
 }
