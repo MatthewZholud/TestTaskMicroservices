@@ -60,9 +60,9 @@ package company
 
 func ToProtoCompany(c Company) CompanyProto {
 	companyProto := CompanyProto{
-		Id:        &c.ID,
-		Name:      &c.Name,
-		Legalform: &c.Legalform,
+		Id:        c.ID,
+		Name:      c.Name,
+		Legalform: c.Legalform,
 	}
 	return companyProto
 }

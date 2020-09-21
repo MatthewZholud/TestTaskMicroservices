@@ -13,9 +13,9 @@ import (
 )
 
 const (
-	apiGatewayPort           = ":3000"
-	employeeMicroServiceAddr = "localhost:4443"
-	companyMicroServiceAddr  = "localhost:3443"
+	apiGatewayPort           = ":3001"
+	employeeMicroServiceAddr = "localhost:3443"
+	companyMicroServiceAddr  = "localhost:4443"
 )
 
 func main() {

@@ -18,6 +18,12 @@ import (
 	sync "sync"
 )
 
+const (
+	// Verify that this generated code is sufficiently up-to-date.
+	_ = protoimpl.EnforceVersion(20 - protoimpl.MinVersion)
+	// Verify that runtime/protoimpl is sufficiently up-to-date.
+	_ = protoimpl.EnforceVersion(protoimpl.MaxVersion - 20)
+)
 
 // This is a compile-time assertion that a sufficiently up-to-date version
 // of the legacy proto package is being used.
@@ -28,7 +34,7 @@ type Id struct {
 	sizeCache     protoimpl.SizeCache
 	unknownFields protoimpl.UnknownFields
 
-	Id *int64 `protobuf:"varint,1,req,name=id" json:"id,omitempty"`
+	Id int64 `protobuf:"varint,1,opt,name=id,proto3" json:"id,omitempty"`
 }
 
 func (x *Id) Reset() {
@@ -64,8 +70,8 @@ func (*Id) Descriptor() ([]byte, []int) {
 }
 
 func (x *Id) GetId() int64 {
-	if x != nil && x.Id != nil {
-		return *x.Id
+	if x != nil {
+		return x.Id
 	}
 	return 0
 }
@@ -75,14 +81,14 @@ type EmployeeProto struct {
 	sizeCache     protoimpl.SizeCache
 	unknownFields protoimpl.UnknownFields
 
-	Id         *int64  `protobuf:"varint,1,opt,name=id" json:"id,omitempty"`
-	Name       *string `protobuf:"bytes,2,opt,name=name" json:"name,omitempty"`
-	SecondName *string `protobuf:"bytes,3,opt,name=secondName" json:"secondName,omitempty"`
-	Surname    *string `protobuf:"bytes,4,opt,name=surname" json:"surname,omitempty"`
-	PhotoUrl   *string `protobuf:"bytes,5,opt,name=photoUrl" json:"photoUrl,omitempty"`
-	HireDate   *string `protobuf:"bytes,6,opt,name=hireDate" json:"hireDate,omitempty"`
-	Position   *string `protobuf:"bytes,7,opt,name=position" json:"position,omitempty"`
-	CompanyId  *int64  `protobuf:"varint,8,opt,name=companyId" json:"companyId,omitempty"`
+	Id         int64  `protobuf:"varint,1,opt,name=id,proto3" json:"id,omitempty"`
+	Name       string `protobuf:"bytes,2,opt,name=name,proto3" json:"name,omitempty"`
+	SecondName string `protobuf:"bytes,3,opt,name=secondName,proto3" json:"secondName,omitempty"`
+	Surname    string `protobuf:"bytes,4,opt,name=surname,proto3" json:"surname,omitempty"`
+	PhotoUrl   string `protobuf:"bytes,5,opt,name=photoUrl,proto3" json:"photoUrl,omitempty"`
+	HireDate   string `protobuf:"bytes,6,opt,name=hireDate,proto3" json:"hireDate,omitempty"`
+	Position   string `protobuf:"bytes,7,opt,name=position,proto3" json:"position,omitempty"`
+	CompanyId  int64  `protobuf:"varint,8,opt,name=companyId,proto3" json:"companyId,omitempty"`
 }
 
 func (x *EmployeeProto) Reset() {
@@ -118,57 +124,57 @@ func (*EmployeeProto) Descriptor() ([]byte, []int) {
 }
 
 func (x *EmployeeProto) GetId() int64 {
-	if x != nil && x.Id != nil {
-		return *x.Id
+	if x != nil {
+		return x.Id
 	}
 	return 0
 }
 
 func (x *EmployeeProto) GetName() string {
-	if x != nil && x.Name != nil {
-		return *x.Name
+	if x != nil {
+		return x.Name
 	}
 	return ""
 }
 
 func (x *EmployeeProto) GetSecondName() string {
-	if x != nil && x.SecondName != nil {
-		return *x.SecondName
+	if x != nil {
+		return x.SecondName
 	}
 	return ""
 }
 
 func (x *EmployeeProto) GetSurname() string {
-	if x != nil && x.Surname != nil {
-		return *x.Surname
+	if x != nil {
+		return x.Surname
 	}
 	return ""
 }
 
 func (x *EmployeeProto) GetPhotoUrl() string {
-	if x != nil && x.PhotoUrl != nil {
-		return *x.PhotoUrl
+	if x != nil {
+		return x.PhotoUrl
 	}
 	return ""
 }
 
 func (x *EmployeeProto) GetHireDate() string {
-	if x != nil && x.HireDate != nil {
-		return *x.HireDate
+	if x != nil {
+		return x.HireDate
 	}
 	return ""
 }
 
 func (x *EmployeeProto) GetPosition() string {
-	if x != nil && x.Position != nil {
-		return *x.Position
+	if x != nil {
+		return x.Position
 	}
 	return ""
 }
 
 func (x *EmployeeProto) GetCompanyId() int64 {
-	if x != nil && x.CompanyId != nil {
-		return *x.CompanyId
+	if x != nil {
+		return x.CompanyId
 	}
 	return 0
 }
@@ -178,7 +184,7 @@ var File_employee_proto protoreflect.FileDescriptor
 var file_employee_proto_rawDesc = []byte{
 	0x0a, 0x0e, 0x65, 0x6d, 0x70, 0x6c, 0x6f, 0x79, 0x65, 0x65, 0x2e, 0x70, 0x72, 0x6f, 0x74, 0x6f,
 	0x12, 0x08, 0x65, 0x6d, 0x70, 0x6c, 0x6f, 0x79, 0x65, 0x65, 0x22, 0x14, 0x0a, 0x02, 0x49, 0x64,
-	0x12, 0x0e, 0x0a, 0x02, 0x69, 0x64, 0x18, 0x01, 0x20, 0x02, 0x28, 0x03, 0x52, 0x02, 0x69, 0x64,
+	0x12, 0x0e, 0x0a, 0x02, 0x69, 0x64, 0x18, 0x01, 0x20, 0x01, 0x28, 0x03, 0x52, 0x02, 0x69, 0x64,
 	0x22, 0xdf, 0x01, 0x0a, 0x0d, 0x45, 0x6d, 0x70, 0x6c, 0x6f, 0x79, 0x65, 0x65, 0x50, 0x72, 0x6f,
 	0x74, 0x6f, 0x12, 0x0e, 0x0a, 0x02, 0x69, 0x64, 0x18, 0x01, 0x20, 0x01, 0x28, 0x03, 0x52, 0x02,
 	0x69, 0x64, 0x12, 0x12, 0x0a, 0x04, 0x6e, 0x61, 0x6d, 0x65, 0x18, 0x02, 0x20, 0x01, 0x28, 0x09,
@@ -200,7 +206,8 @@ var file_employee_proto_rawDesc = []byte{
 	0x72, 0x6f, 0x74, 0x6f, 0x12, 0x37, 0x0a, 0x0e, 0x43, 0x72, 0x65, 0x61, 0x74, 0x65, 0x45, 0x6d,
 	0x70, 0x6c, 0x6f, 0x79, 0x65, 0x65, 0x12, 0x17, 0x2e, 0x65, 0x6d, 0x70, 0x6c, 0x6f, 0x79, 0x65,
 	0x65, 0x2e, 0x45, 0x6d, 0x70, 0x6c, 0x6f, 0x79, 0x65, 0x65, 0x50, 0x72, 0x6f, 0x74, 0x6f, 0x1a,
-	0x0c, 0x2e, 0x65, 0x6d, 0x70, 0x6c, 0x6f, 0x79, 0x65, 0x65, 0x2e, 0x49, 0x64,
+	0x0c, 0x2e, 0x65, 0x6d, 0x70, 0x6c, 0x6f, 0x79, 0x65, 0x65, 0x2e, 0x49, 0x64, 0x62, 0x06, 0x70,
+	0x72, 0x6f, 0x74, 0x6f, 0x33,
 }
 
 var (

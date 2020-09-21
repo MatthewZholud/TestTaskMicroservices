@@ -14,7 +14,7 @@ type Server struct {
 func (s *Server) GetCompany(ctx context.Context, in *Id) (*CompanyProto, error) {
 	var company Company
 
-	rows, err := s.Database.Db.Query("SELECT * from company WHERE company_id = $1", in)
+	rows, err := s.Database.Db.Query("SELECT * from company WHERE company_id = $1", in.Id)
 	if err != nil {
 		return nil, err
 	}
@@ -33,11 +33,11 @@ func (s *Server) GetCompany(ctx context.Context, in *Id) (*CompanyProto, error) 
 //CreateOrder CreateOrder
 func (s *Server) CreateCompany(ctx context.Context, in *CompanyProto) (*Id, error) {
 	var compId int64
-	err := s.Database.Db.QueryRow("INSERT INTO company(name, legal_form) VALUES ($1, $2) RETURNING company_id", *in.Name, *in.Legalform).Scan(compId)
+	err := s.Database.Db.QueryRow("INSERT INTO company(name, legal_form) VALUES ($1, $2) RETURNING company_id", in.Name, in.Legalform).Scan(compId)
 	if err != nil {
 		return nil, err
 	}
-	return &Id{Id: &compId}, nil
+	return &Id{Id: compId}, nil
 }
 
 //GetAllOrders GetAllOrders

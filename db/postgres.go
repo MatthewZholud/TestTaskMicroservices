@@ -8,14 +8,16 @@ import (
 
 type Postgres struct {
 	Db *sql.DB
+	DBName  string
 }
+
+const dbname = "company_manager"
 
 //NewMongoDB NewMongoDB
 func NewPostgresDB() (*Postgres, error) {
 	//config := DBConfig{}
-
 	PsqlInfo := fmt.Sprintf("host=%s port=%s user=%s password=%s dbname=%s sslmode=disable",
-		"postgresdb", "5432", "postgres", "mypassword", "company_manager")
+		"localhost", "5432", "postgres", "mypassword", "company_manager")
 
 	//PsqlInfo := fmt.Sprintf("user=%s password=%s host=%s dbname=%s port=%s sslmode=disable",
 	//	config.GetUser(), config.GetPassword(), config.GetHost(), config.GetDBName(), config.GetPort())
@@ -28,5 +30,5 @@ func NewPostgresDB() (*Postgres, error) {
 		return nil, err
 	}
 
-	return &Postgres{Db: db}, nil
+	return &Postgres{Db: db, DBName: dbname}, nil
 }

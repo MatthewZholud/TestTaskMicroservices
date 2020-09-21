@@ -1,20 +1,17 @@
-syntax = "proto2";
+syntax = "proto3";
 package company;
 
 message Id {
-  required int64 id = 1;
+   int64 id = 1;
 }
 
 message CompanyProto {
-  optional int64 id = 1;
-  optional string name = 2;
-  optional string legalform = 3;
+   int64 id = 1;
+   string name = 2;
+   string legalform = 3;
 }
 
 service Company {
   rpc GetCompany (Id) returns (CompanyProto);
   rpc CreateCompany (CompanyProto) returns (Id);
 }
-
-
-//$ protoc -I=. --go_out=plugins=grpc:. consignment.proto

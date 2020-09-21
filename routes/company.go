@@ -9,7 +9,7 @@ import (
 
 func RegisterCompanyRoutes(r *mux.Router, c company.CompanyClient) *mux.Router {
 
-	r.HandleFunc("/company/", handlers.PostCompany(c)).Methods(http.MethodPost)
+	r.HandleFunc("/company/", handlers.CreateCompany(c)).Methods(http.MethodPost)
 	//r.HandleFunc("/company/", handlers.PutCompany(c)).Methods(http.MethodPut)
 	r.HandleFunc("/company/{companyId}", handlers.GetCompany(c)).Methods(http.MethodGet)
 	//r.HandleFunc("/company/{companyId}", handlers.PostCompanyByID(c)).Methods(http.MethodPost)
